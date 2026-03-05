@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-prisma-black: #121212;
+  --color-prisma-dark: #1A1A1A;
+  --color-prisma-border: #2A2A2A;
+  --color-prisma-emerald: #50C878;
+  --color-prisma-orange: #FF5F1F;
+}
+
+@layer base {
+  body {
+    @apply bg-prisma-black text-zinc-200 font-sans antialiased selection:bg-prisma-emerald selection:text-prisma-black;
+  }
+}
+
+@layer utilities {
+  .dot-grid-20 {
+    background-image: radial-gradient(circle, #2A2A2A 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .pro-card {
+    @apply bg-prisma-dark border border-prisma-border rounded-lg transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-prisma-emerald text-prisma-black font-bold px-6 py-3 rounded hover:brightness-110 active:scale-95 transition-all shadow-[0_0_20px_rgba(80,200,120,0.2)] hover:shadow-[0_0_30px_rgba(80,200,120,0.4)];
+  }
+
+  .btn-secondary {
+    @apply border border-prisma-border text-zinc-300 font-bold px-6 py-3 rounded hover:bg-prisma-border active:scale-95 transition-all;
+  }
+}
+
+.dot-grid {
+  background-image: radial-gradient(circle, #2A2A2A 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.glass-card {
+  @apply bg-prisma-dark/50 border border-prisma-border backdrop-blur-sm;
+}
